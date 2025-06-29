@@ -1,111 +1,231 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- DaisyUI Link -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DevBoard</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/npm/daisyui@3.8.0"></script>
 </head>
-<body class="bg-green-400">
-  <!-- Nav Section -->
-    <div class="flex mt-4 h-12 pt-2 bg-white rounded-xl border-collapse mx-auto navbar bg-base-100 shadow-sm  ml-24 mr-24">
-      <!-- Nav Text -->
-  
-    <div class="flex-1">
-   <div class="flex gap-1">
-     <img 
-     class="h-5 mt-1 pl-2"
-     src="assets/logo.png" alt="">
-    <a class="btn btn-ghost text-xl">Dev<span class="font-bold">Board</span></a>
-   </div>
-  </div>
-  <div class="flex gap-6">
-    <!-- Chackbox Section -->
-    <div class="bg-gray-200 rounded-xl h-8 pl-2 pr-2 justify-center dropdown dropdown-end">
-      <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
-        <div class="flex gap-1 mx-auto">
-          <img class="h-6 mt-1" src="assets/checkbox.png" alt="">
-          <span class="badge badge-sm indicator-item text-2xl">25</span>
-        </div>
-      </div>
-      <!-- Img Section -->
-    </div>
-    <div class="dropdown dropdown-end">
-      <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
-        <div id="themeChanger" class="w-10 rounded-full">
-          <img
-          id="themeChanger"
-            class="h-6 mt-1 bg-gray-300    rounded-md"
-            alt="Tailwind CSS Navbar component"
-            src="assets/theme-btn.png" />
-        </div>
-      </div>
 
+<body class="bg-gray-200">
+  <!-- Navbar -->
+  <div class="flex mt-4 h-12  bg-white rounded-xl mx-24 shadow-sm items-center justify-between px-4">
+    <div class="flex items-center gap-2">
+      <img src="assets/logo.png" alt="Logo" class="h-5 mt-1">
+      <a class="btn btn-ghost text-xl">Dev<span class="font-bold">Board</span></a>
+    </div>
+    <div class="flex items-center gap-6">
+      <div class="bg-gray-200 rounded-xl h-8 px-2 flex items-center">
+        <img class="h-6" src="assets/checkbox.png" alt="">
+        <span class="badge badge-sm text-lg ml-1">23</span>
+      </div>
+      <div class="w-8 h-8 rounded-full bg-gray-300 flex items-center justify-center">
+        <img id="themeChanger" src="assets/theme-btn.png" alt="Theme" class="h-6">
+      </div>
     </div>
   </div>
-  
-</div>
 
-<!-- Header Section -->
- <section>
-  <!-- Section Header -->
- <section class="mt-4 mx-24">
-  <div class="flex justify-between items-center bg-white rounded-xl shadow-sm p-4 h-36">
-    <!-- Card 1 -->
-  <div class="flex items-center gap-4 bg-gray-200 rounded-lg h-full px-6 py-4">
-  <!-- Image with white circular background -->
-  <div class="bg-white rounded-full p-2 shadow-md">
-    <img src="assets/checkbox.png" alt="" class="w-10 h-10">
+  <!-- Main Section -->
+  <section class="flex mt-6 mx-24 gap-2">
+
+    <!-- Left Side (Main Content) -->
+    <aside class="w-2/3 bg-white p-6 rounded-xl shadow-md">
+      <!-- Summary Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+        <div class="bg-gray-200 border rounded-xl p-4 flex gap-2 items-center text-center">
+          <div class="w-11 h-11 rounded-full bg-white flex items-center justify-center">
+            <img src="assets/checkbox.png" alt="" class="w-6 h-6">
+          </div>
+
+          <!-- smaller image -->
+          <div class="text-left"> <!-- align all text inside div to the left -->
+            <p class="text-sm text-gray-600">Task Assigned</p>
+            <p class="text-lg font-bold text-blue-600">6</p>
+            <!-- number aligned left now -->
+          </div>
+        </div>
+
+        <div id="discoverCard"
+          class="bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl p-4 text-white text-center flex flex-row items-center justify-center gap-4">
+          <img src="assets/board.png" alt="" class="w-10 h-10"> <!-- smaller image -->
+          <h3 class="text-[12px] font-semibold">Discover Something New Today!</h3>
+        </div>
+
+        <div class="bg-gray-200 border rounded-xl p-4">
+
+          <div class="flex items-center justify-center space-x-3 mt-2">
+            
+            <div class="w-11 h-11 rounded-full bg-white flex items-center justify-center">
+              <img src="assets/calender.png" alt="Calendar Icon" class="w-6 h-6">
+            </div>
+            <p id="current-date" class="text-sm font-semibold text-gray-800"></p>
+
+
+          </div>
+
+        </div>
+      </div>
+      <hr style="padding-top: 20px;" class="border-0 border-t-2 border-dashed border-gray-400">
+
+
+      <!-- Task Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <!-- Repeat for each task -->
+         <!-- Card-01 -->
+        <div class="bg-gray-200  p-4 rounded-xl shadow-sm">
+          <p class="text-xs bg-white rounded-lg text-black inline-block px-1 py-0.5">Shop Ease</p>
+
+          <h3 class="text-base font-semibold text-gray-900">Fix Mobile Button Issue</h3>
+          <p class="rounded-lg p-2 text-sm text-gray-700 mt-1 bg-white">
+            A card component has a figure, a body part, and inside body there are
+            title and actions parts.
+          </p>
+          
+          <div class="mt-3 flex justify-between items-center">
+            <p class="text-xs text-gray-600">Deadline <br> <span class="font-bold">21 March 2025</span></p>
+            <span class="bg-blue-500 text-white text-xs px-3 py-1 rounded-md">Completed</span>
+          </div>
+        </div>
+        <!-- card-02 -->
+        <div class="bg-gray-200  p-4 rounded-xl shadow-sm">
+          <p class="text-xs bg-white rounded-lg text-black inline-block px-1 py-0.5">Soft Pay</p>
+
+          <h3 class="text-base font-semibold text-gray-900">Add Pay Success Modal</h3>
+          <p class="rounded-lg p-2 text-sm text-gray-700 mt-1 bg-white">
+            A card component has a figure, a body part, and inside body there are
+            title and actions parts.
+          </p>
+          
+          <div class="mt-3 flex justify-between items-center">
+            <p class="text-xs text-gray-600">Deadline <br> <span class="font-bold">25 March 2025</span></p>
+            <span class="bg-blue-500 text-white text-xs px-3 py-1 rounded-md">Completed</span>
+          </div>
+        </div>
+        <!-- Card -03 -->
+        <div class="bg-gray-200  p-4 rounded-xl shadow-sm">
+          <p class="text-xs bg-white rounded-lg text-black inline-block px-1 py-0.5">Meta</p>
+
+          <h3 class="text-base font-semibold text-gray-900">Add new reaction 🙌</h3>
+          <p class="rounded-lg p-2 text-sm text-gray-700 mt-1 bg-white">
+            A card component has a figure, a body part, and inside body there are
+            title and actions parts.
+          </p>
+          
+          <div class="mt-3 flex justify-between items-center">
+            <p class="text-xs text-gray-600">Deadline <br> <span class="font-bold">31 March 2025</span></p>
+            <span class="bg-blue-500 text-white text-xs px-3 py-1 rounded-md">Completed</span>
+          </div>
+        </div>
+        <!-- Card-04 -->
+        <div class="bg-gray-200  p-4 rounded-xl shadow-sm">
+          <p class="text-xs bg-white rounded-lg text-black inline-block px-1 py-0.5">Programming Hero</p>
+
+          <h3 class="text-base font-semibold text-gray-900">Fix Video Loading Issue</h3>
+          <p class="rounded-lg p-2 text-sm text-gray-700 mt-1 bg-white">
+            A card component has a figure, a body part, and inside body there are
+            title and actions parts.
+          </p>
+          
+          <div class="mt-3 flex justify-between items-center">
+            <p class="text-xs text-gray-600">Deadline <br> <span class="font-bold">01 March 2025</span></p>
+            <span class="bg-blue-500 text-white text-xs px-3 py-1 rounded-md">Completed</span>
+          </div>
+        </div>
+    
+   <!-- Card-05 -->
+   <div class="bg-gray-200  p-4 rounded-xl shadow-sm">
+    <p class="text-xs bg-white rounded-lg text-black inline-block px-1 py-0.5">Google LLC</p>
+
+    <h3 class="text-base font-semibold text-gray-900">Integrate AI search</h3>
+    <p class="rounded-lg p-2 text-sm text-gray-700 mt-1 bg-white">
+      A card component has a figure, a body part, and inside body there are
+      title and actions parts.
+    </p>
+    
+    <div class="mt-3 flex justify-between items-center">
+      <p class="text-xs text-gray-600">Deadline <br> <span class="font-bold">01 April 2025</span></p>
+      <span class="bg-blue-500 text-white text-xs px-3 py-1 rounded-md">Completed</span>
+    </div>
   </div>
+      <!-- Card-06 -->
+      <div class="bg-gray-200  p-4 rounded-xl shadow-sm">
+        <p class="text-xs bg-white rounded-lg text-black inline-block px-1 py-0.5">Polygon Tech</p>
 
-  <div>
-    <p class="text-sm text-gray-700 font-semibold">Task Assigned</p>
-    <h1 class="font-bold text-gray-900 text-xl">05</h1>
-  </div>
-</div>
+        <h3 class="text-base font-semibold text-gray-900">Review Ami Probashi Site</h3>
+        <p class="rounded-lg p-2 text-sm text-gray-700 mt-1 bg-white">
+          A card component has a figure, a body part, and inside body there are
+          title and actions parts.
+        </p>
+        
+        <div class="mt-3 flex justify-between items-center">
+          <p class="text-xs text-gray-600">Deadline <br> <span class="font-bold">5 May 2025</span></p>
+          <span class="bg-blue-500 text-white text-xs px-3 py-1 rounded-md">Completed</span>
+        </div>
+      </div>
+       
+      </div>
+    </aside>
 
-
-
-    <!-- Card 2 (Bigger Center Card) -->
-    <div id="discoverCard" class="flex items-center justify-center bg-gradient-to-r from-blue-500 via-blue-400 to-blue-300 rounded-lg h-full flex-grow mx-4 px-6 py-4">
-  <img src="assets/board.png" alt="" class="w-10 h-10 mr-4">
-  <h3 class="text-white text-lg leading-tight">Discover Something<br>New Today!</h3>
-</div>
-
-
-    <!-- Card 3 -->
-    <div class="flex items-center gap-4 bg-gray-200 rounded-lg h-full px-6 py-4">
-  <!-- Image with white circular background -->
-  <div class="bg-white rounded-full p-2 shadow-md">
-    <img src="assets/calender.png" alt="" class="w-10 h-10">
-  </div>
-
-  <div>
-    <h3 class="text-sm text-gray-700 font-semibold">Wed,</h3>
-    <span class="font-bold text-gray-900 text-base">Jul 28 2025</span>
-  </div>
-</div>
-
-  </div>
-</section>
+    <!-- Right Sidebar (Activity Log) -->
+    <aside class="w-1/3 bg-white p-6 rounded-xl shadow-md flex flex-col gap-4">
+      <!-- Header -->
+      <div class="flex flex-col items-center justify-center text-center space-y-4">
 
 
-    </section>
+        <!-- Centered Image + Text Below -->
+        <div class="flex flex-col items-center gap-2 mt-2">
+          <div class="flex items-center space-x-2">
+            <img src="assets/activity.png" alt="Activity Icon" class="h-5 w-5">
 
- </section>
-<!-- Tailwindcss & DaisyUi links -->
-<script src="https://cdn.tailwindcss.com"></script>
+            <h2 class="text-lg font-semibold text-gray-800">Activity Log</h2>
+          </div>
+
+        </div>
+        <!-- Clear History Button on Top -->
+        <button class="bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition">
+          Clear History
+        </button>
+      </div>
+      <hr class="border-0 border-t-2 border-dashed border-gray-400">
+
+
+
+
+      <!-- Logs -->
+      <div class="flex flex-col gap-2">
+        <div class="p-3 bg-gray-100 rounded-md text-sm text-gray-700 shadow-sm">
+          ✅ Completed “Fix Mobile Button Issue”
+        </div>
+        <div class="p-3 bg-gray-100 rounded-md text-sm text-gray-700 shadow-sm">
+          🎉 Added Pay Success Modal
+        </div>
+        <div class="p-3 bg-gray-100 rounded-md text-sm text-gray-700 shadow-sm">
+          🧪 Reviewed Ami Probashi Site
+        </div>
+        <div class="p-3 bg-gray-100 rounded-md text-sm text-gray-700 shadow-sm">
+          🚀 Integrated AI Search
+        </div>
+        <div class="p-3 bg-gray-100 rounded-md text-sm text-gray-700 shadow-sm">
+          🛠️ Fixed Video Loading Issue
+        </div>
+      </div>
+    </aside>
+  </section>
+
+  <!-- Scripts -->
   <script>
     tailwind.config = {
       plugins: [daisyui],
-    }
+    };
   </script>
-  <script src="https://cdn.jsdelivr.net/npm/daisyui"></script>
 
-  <!-- JavaScript link -->
-   <script src="js/theamChanger.js" defer></script>
-   <script src="js/question.js"></script>
- 
+  <!-- JavaScript Links -->
+
+  <script src="js/theamChanger.js"></script>
+  <script src="js/question.js"></script>
+  <script src="js/newdate.js"></script>
 </body>
+
 </html>
